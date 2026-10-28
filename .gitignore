@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+.env
+outputs/
+data/
+external/
+*.log
+*.egg-info/
+
+runner/**/__pycache__/

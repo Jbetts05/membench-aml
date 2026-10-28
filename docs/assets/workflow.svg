@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="title description">
+  <title id="title">Memory benchmarks, from notebook to Azure ML</title>
+  <desc id="description">LongMemEval, LoCoMo, and STATE-Bench flow through a notebook into parallel Azure Machine Learning jobs and dataset-specific metrics. Animated connectors show the workflow; reduced-motion settings disable the animation.</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop stop-color="#08152b"/>
+      <stop offset="1" stop-color="#102c48"/>
+    </linearGradient>
+    <style>
+      svg {
+        --text: #eef7ff;
+        --muted: #acc4db;
+        --line: #34516e;
+        --panel: #10243b;
+        --cyan: #66dcf5;
+        --blue: #70baff;
+        --green: #83e3bc;
+        --amber: #ffce80;
+        font-family: "Segoe UI", Aptos, Calibri, sans-serif;
+      }
+      text { fill: var(--text); }
+      .eyebrow { fill: var(--cyan); font-size: 12px; font-weight: 600; letter-spacing: 3px; }
+      .headline { font-size: 32px; font-weight: 700; }
+      .subtitle { fill: var(--muted); font-size: 15px; }
+      .panel { fill: var(--panel); stroke: var(--line); }
+      .number { fill: var(--cyan); font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+      .label { font-size: 19px; font-weight: 600; }
+      .detail { fill: var(--muted); font-size: 13px; }
+      .mono { font-family: Consolas, "Courier New", monospace; font-size: 12px; }
+      .track { fill: none; stroke: var(--line); stroke-width: 2; }
+      .flow { fill: none; stroke: var(--cyan); stroke-width: 2; stroke-dasharray: 6 10; animation: flow 2s linear infinite; }
+      .job { fill: none; stroke: var(--blue); stroke-width: 2; }
+      .pulse { fill: var(--green); animation: pulse 3s ease-in-out infinite; }
+      .delay { animation-delay: 1s; }
+      .later { animation-delay: 2s; }
+      .bar { stroke: var(--green); stroke-width: 5; stroke-linecap: round; }
+      @keyframes flow { to { stroke-dashoffset: -32; } }
+      @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+      @media (prefers-reduced-motion: reduce) {
+        .flow, .pulse { animation: none; }
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="380" rx="20" fill="url(#background)"/>
+  <path d="M32 126H1168M32 328H1168" class="track" opacity="0.5"/>
+  <text x="36" y="39" class="eyebrow">MEMBENCH / AZURE MACHINE LEARNING</text>
+  <text x="36" y="80" class="headline">Measure what memory changes.</text>
+  <text x="36" y="106" class="subtitle">One notebook. Three benchmarks. Parallel jobs. Dataset-specific evidence.</text>
+
+  <path d="M276 225H328M556 225H608M836 225H888" class="track"/>
+  <path d="M276 225H328M556 225H608M836 225H888" class="flow"/>
+  <path d="m318 219 10 6-10 6m280-12 10 6-10 6m280-12 10 6-10 6" fill="none" stroke="#66dcf5" stroke-width="2"/>
+
+  <rect x="36" y="150" width="240" height="152" rx="12" class="panel"/>
+  <text x="56" y="176" class="number">01 / SELECT</text>
+  <text x="56" y="206" class="label">Choose a benchmark</text>
+  <text x="56" y="233" class="mono" style="fill: var(--cyan)">LongMemEval</text>
+  <text x="56" y="256" class="mono" style="fill: var(--blue)">LoCoMo</text>
+  <text x="56" y="279" class="mono" style="fill: var(--amber)">STATE-Bench</text>
+
+  <rect x="328" y="150" width="228" height="152" rx="12" class="panel"/>
+  <text x="348" y="176" class="number">02 / PREPARE</text>
+  <text x="348" y="206" class="label">Run the notebook</text>
+  <text x="348" y="234" class="detail">Fetch and sample complete cases</text>
+  <text x="348" y="258" class="detail">Register Azure ML data assets</text>
+  <text x="348" y="282" class="mono" style="fill: var(--cyan)">DATASET_PERCENT</text>
+
+  <rect x="608" y="150" width="228" height="152" rx="12" class="panel"/>
+  <text x="628" y="176" class="number">03 / EXECUTE</text>
+  <text x="628" y="206" class="label">Fan out in Azure ML</text>
+  <path d="M628 251h20m0-16v32m0-32h18m-18 16h18m-18 16h18" class="track"/>
+  <rect x="668" y="225" width="144" height="14" rx="4" class="job"/>
+  <rect x="668" y="246" width="144" height="14" rx="4" class="job"/>
+  <rect x="668" y="267" width="144" height="14" rx="4" class="job"/>
+  <circle cx="680" cy="232" r="3" class="pulse"/>
+  <circle cx="680" cy="253" r="3" class="pulse delay"/>
+  <circle cx="680" cy="274" r="3" class="pulse later"/>
+  <path d="M692 232h106m-106 21h106m-106 21h106" class="track"/>
+
+  <rect x="888" y="150" width="276" height="152" rx="12" class="panel"/>
+  <text x="908" y="176" class="number">04 / COMPARE</text>
+  <text x="908" y="206" class="label">Inspect the evidence</text>
+  <path d="M912 230h20m-20 14h30m-30 14h24" class="bar"/>
+  <text x="956" y="234" class="detail">QA condition comparisons</text>
+  <text x="956" y="258" class="detail">STATE-Bench task metrics</text>
+  <text x="908" y="282" class="mono" style="fill: var(--green)">artifacts / aggregate / inspect</text>
+
+  <text x="36" y="355" class="detail">QA CONDITIONS</text>
+  <text x="165" y="355" class="mono">question-only</text>
+  <circle cx="289" cy="351" r="2" fill="#34516e"/>
+  <text x="309" y="355" class="mono">full-transcript</text>
+  <circle cx="447" cy="351" r="2" fill="#34516e"/>
+  <text x="467" y="355" class="mono">oracle-context</text>
+  <circle cx="598" cy="351" r="2" fill="#34516e"/>
+  <text x="618" y="355" class="mono" style="fill: var(--cyan)">foundry-memory</text>
+  <text x="1164" y="355" text-anchor="end" class="detail">Smoke tests are not benchmark claims.</text>
+</svg>

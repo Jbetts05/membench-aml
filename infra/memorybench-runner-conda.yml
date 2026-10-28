@@ -1,0 +1,11 @@
+name: memorybench-runner
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - azure-ai-projects==2.2.0
+      - azure-identity
+      - azureml-mlflow
+      - https://github.com/microsoft/STATE-Bench/archive/0ffbd737f4ae62b16bb5e9dd42e5ecf09b923892.zip

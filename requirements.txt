@@ -1,0 +1,6 @@
+azure-ai-ml
+azure-ai-projects==2.2.0
+azure-identity
+azure-storage-blob
+azureml-mlflow
+ipykernel
